@@ -14,7 +14,7 @@ pool.connect();
 const properties = require("./json/properties.json");
 const users = require("./json/users.json");
 
-/// Users
+//--- Users
 
 /**
  * Get a single user from the database given their email.
@@ -161,9 +161,7 @@ const getAllProperties = function (options, limit = 10) {
       }
     }
   
-  
     // 4
-    
     queryString += `
     GROUP BY properties.id
     `;
@@ -176,8 +174,6 @@ const getAllProperties = function (options, limit = 10) {
     queryParams.push(limit);
     queryString += `ORDER BY cost_per_night
     LIMIT $${queryParams.length}`;
-  
-  
   
     // 5
     console.log(queryString, queryParams);
